@@ -32,7 +32,7 @@ const App = () => {
                     type="button"
                     className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
                     onClick={() => {
-                      console.log("Hello world");
+                      setOutput("hello");
                     }}
                   >
                     Compile
