@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 const App = () => {
-  const [output, setOutput] = useState<string>("Compiler output goes here");
+  const [Input, setInput] = useState<string>("");
+  const [output, setOutput] = useState<string>("");
+  const handleTextChange = (event: any) => {
+    setInput(event.target.value);
+    console.log(Input);
+  };
   return (
     <>
       <div className="flex items-center justify-center my-24  text-4xl font-semibold">
@@ -19,12 +24,16 @@ const App = () => {
                     className="w-full px-0 text-sm text-gray-900 bg-white border-0"
                     placeholder="Your java program goes here..."
                     required
+                    onChange={handleTextChange}
                   ></textarea>
                 </div>
-                <div className="flex items-center justify-end px-3 py-2 border-t ">
+                <div className="flex items-center justify-end px-3 py-2 border-t">
                   <button
-                    type="submit"
+                    type="button"
                     className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                    onClick={() => {
+                      console.log("Hello world");
+                    }}
                   >
                     Compile
                   </button>
